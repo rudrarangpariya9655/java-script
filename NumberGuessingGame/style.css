@@ -1,0 +1,83 @@
+
+/* General reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+	font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background: radial-gradient(1200px 600px at 10% 10%, #FFDEE9 0%, transparent 15%),
+							radial-gradient(1000px 500px at 90% 90%, #B5FFFC 0%, transparent 18%),
+							linear-gradient(180deg, #0F172A 0%, #071028 100%);
+	color: #E6F0FF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.game-card {
+	width: min(520px, 92%);
+	background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+	border: 1px solid rgba(255,255,255,0.06);
+	border-radius: 16px;
+	padding: 2.25rem;
+	box-shadow: 0 8px 30px rgba(2,6,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+	backdrop-filter: blur(6px) saturate(120%);
+}
+
+.game-header { text-align: center; margin-bottom: 1.25rem; }
+.game-header h1 { font-size: 1.5rem; letter-spacing: 0.4px; color: #F8FAFF; }
+.game-desc { font-size: 0.9rem; color: #CDE8FF; opacity: 0.9; margin-top: 0.25rem; }
+
+.controls { display:flex; gap: 0.75rem; align-items: center; justify-content: center; margin-top: 1rem; }
+
+input[type="number"], .btn {
+	height: 52px;
+	border-radius: 12px;
+	border: none;
+	outline: none;
+	font-size: 1rem;
+}
+
+input[type="number"] {
+	width: 80%;
+	padding: 0 1rem;
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	color: #EAF6FF;
+	border: 1px solid rgba(255,255,255,0.04);
+	transition: box-shadow .18s ease, transform .12s ease;
+}
+
+input[type="number"]::placeholder { color: #9CCFEA; opacity: 0.7; }
+input[type="number"]:focus { box-shadow: 0 6px 18px rgba(10,130,200,0.12); transform: translateY(-1px); }
+
+
+
+.btn {
+	width: 20%;
+	cursor: pointer;
+	display:inline-flex; align-items:center; justify-content:center;
+	font-weight: 600;
+	color: #052A3A;
+	background: linear-gradient(135deg, #7EF192 0%, #25D3B8 50%, #19A7FF 100%);
+	box-shadow: 0 8px 24px rgba(25,167,255,0.14), inset 0 -2px 6px rgba(0,0,0,0.08);
+	transition: transform .14s ease, box-shadow .14s ease, filter .14s ease;
+}
+.btn:hover { transform: translateY(-3px); filter: brightness(1.02); }
+.btn:active { transform: translateY(0); box-shadow: 0 4px 12px rgba(25,167,255,0.12); }
+
+.status { margin-top: 1rem; text-align:center; color: #DFF7FF; font-weight:600; }
+
+.hint { margin-top: .5rem; text-align:center; color: #BEE7FF; font-size: .92rem; }
+
+/* small screens */
+@media (max-width:420px) {
+	.controls { flex-direction: column; }
+	input[type="number"], .btn { width: 100%; }
+	.game-card { padding: 1.25rem; border-radius: 12px; }
+}
+
+/* nice focus outline for accessibility */
+input[type="number"]:focus-visible, .btn:focus-visible { box-shadow: 0 8px 24px rgba(25,167,255,0.16), 0 0 0 3px rgba(25,167,255,0.08); }
+
+/* utility */
+.muted { color: #9CCFEA; opacity: 0.9; font-size: .86rem; }

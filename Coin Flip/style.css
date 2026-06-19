@@ -1,0 +1,36 @@
+body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.coin{
+    height: 300px;
+    width: 300px;
+    border: 5px solid black;
+    border-radius: 50%;
+    font-size: 125px;
+    justify-content:center ;
+    align-items: center;
+    display: flex;
+    /*animation: coinFlip 3s 2 ease; */
+}
+
+@keyframes coinFlip {
+    0% { 
+        transform: rotateX(0deg) translateY(0px) ;
+    }
+    50%   { 
+        transform: rotateX(360deg) translateY(-60px) ; 
+    }
+    100%   {        
+        transform: rotateX(0deg) translateY(0px) ;
+    }
+}
+
+button{
+    margin: 100px;
+}
